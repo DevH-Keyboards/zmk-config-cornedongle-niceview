@@ -9,8 +9,11 @@ config ZMK_SPLIT_ROLE_CENTRAL
 endif
 
 if SHIELD_CORNE_CENTRAL_DONGLE || SHIELD_CORNE_PERIPHERAL_LEFT || SHIELD_CORNE_PERIPHERAL_RIGHT
+
+
 config ZMK_SPLIT
     default y
+
 
 if ZMK_DISPLAY
 
@@ -20,10 +23,13 @@ config I2C
 config SSD1306
     default y
 
+choice ZMK_DISPLAY_WORK_QUEUE
+    default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
+endchoice
 
-endif # ZMK_DISPLAY
+endif
 
-if LVGL
+if SSD1306
 
 config LV_Z_VDB_SIZE
     default 64
@@ -37,8 +43,6 @@ config LV_Z_BITS_PER_PIXEL
 choice LV_COLOR_DEPTH
     default LV_COLOR_DEPTH_1
 endchoice
-
-endif # LVGL
 
 endif
 
