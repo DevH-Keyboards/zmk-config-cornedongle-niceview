@@ -6,6 +6,8 @@ manifest:
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
     - name: englmaxi
       url-base: https://github.com/englmaxi
+    - name: gpeye                         #new entry
+      url-base: https://github.com/GPeye  #new entry
 
   projects:
     - name: zmk
@@ -15,5 +17,8 @@ manifest:
     - name: zmk-dongle-display
       remote: englmaxi
       revision: main
+    - name: hammerbeam-slideshow          #new entry
+      remote: gpeye                       #new entry
+      revision: main                      #new entry
   self:
     path: config
